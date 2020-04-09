@@ -1,25 +1,12 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 class Portfolio extends React.Component {
   constructor(props) {
     super(props);
     this.removeStock = this.removeStock.bind(this);
     this.handleChange = this.handleChange.bind(this);
-  }
 
-  removeStock(index) {
-    const portfolio = this.state.portfolio.slice(); // shallow copy
-    portfolio.splice(index, 1); // remove value at index
-    this.setState({ portfolio });
-  }
-
-  handleChange(event, index) {
-    const portfolio = this.state.portfolio.slice(); // shallow copy
-    const { name, value } = event.target;
-    portfolio[index][name] = value;
-    this.setState({ portfolio });
-  }
-
-  constructor(props) {
-    super(props);
     this.state = {
       portfolio: [
         {
@@ -40,9 +27,22 @@ class Portfolio extends React.Component {
         }
       ]
     };
+  }
+
+  removeStock(index) {
+    const portfolio = this.state.portfolio.slice(); // shallow copy
+    portfolio.splice(index, 1); // remove value at index
+    this.setState({ portfolio });
+  }
+
+  handleChange(event, index) {
+    const portfolio = this.state.portfolio.slice(); // shallow copy
+    const { name, value } = event.target;
+    portfolio[index][name] = value;
+    this.setState({ portfolio });
+  }
 
     // Note: api JSON data often come in underscore_styled like above
-  }
 
   render() {
     const { portfolio } = this.state;
