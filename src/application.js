@@ -135,16 +135,16 @@ class Portfolio extends React.Component {
             name="name"
             type="text"
             placeholder="Name"
-            onChange={this.handleFormChange}
+            onChange={this.formChange}
             value={form.name}
             required
           />
           <input
             className="mx-2"
             name="shares_owned"
-            type="text"
+            type="number"
             placeholder="Shares"
-            onChange={this.handleFormChange}
+            onChange={this.formChange}
             value={form.shares_owned}
           />
           <input
@@ -152,17 +152,17 @@ class Portfolio extends React.Component {
             name="cost_per_share"
             type="number"
             placeholder="Cost"
-            onChange={this.handleFormChange}
+            onChange={this.formChange}
             value={form.cost_per_share}
-            required
+
           />
           <input
             className="mx-2"
             name="market_price"
             type="number"
             placeholder="Price"
+            onChange={this.formChange}
             value={form.market_price}
-            onChange={this.handleChange}
           />
             <button className="btn btn-light btn-sm">Add</button>
           </form>
